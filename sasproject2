@@ -1,4 +1,3 @@
-*1;
 proc import datafile='/home/u63114820/ufo.xlsx' out=work.ufo dbms=xlsx;
 	sheet='Sightings';
 run;
@@ -15,7 +14,6 @@ proc contents data=work.ufo;
 run;
 ods listing close;
 
-*2;
 data work.ufo_sightings;
 	length region $10;
 	set work.ufo (keep=date time c city state shape duration_s posted);
@@ -82,6 +80,3 @@ proc print data=work.ufo_sightings2_s label N;
 	duration='Duration Length';
 run;
 ods listing close;
-
-
-
